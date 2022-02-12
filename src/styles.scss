@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+$bgColor:#131722;
+$lightBgColor:#24beaf;
+$fontColor:#fff;
+$borderHeight:1px;
+$borderColor:#5a5151a4;
+$secondFontColor:rgb(189, 189, 189);
+$ThirdFontColor:#72d5f3;
+body{
+    background-image: url("./assets/images/sec.jpg");
+    font-family: 'Montserrat', sans-serif;
+    color:$fontColor !important;
+}
+a,.nav-link{
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover,.nav-link:hover{
+    color:$fontColor !important;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.bordr{
+    height:1px;
+    background-color: $borderColor;
+   
+}
+.second{
+    color:$secondFontColor !important;
+}
+.vote{
+background-color:$ThirdFontColor;
+padding: 5px;
+font-weight: 700;
+position: absolute;
+top:0;
+right: 10px;
+
+}

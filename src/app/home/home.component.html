@@ -1,0 +1,70 @@
+<app-homeheading [TrendingMovies]='TrendingMovies'></app-homeheading>
+
+  <!-- Trending MOVIES -->
+<div class="container ">
+   <div class="row p-5">
+      <div class="col-md-4  d-flex align-items-center">
+         <div class="movie">
+            <div class="bordr w-25  "></div>
+            <h2 class="mt-2">Trending movies to watch Right now</h2>
+            <p class="second mb-2">most watched movies by days</p>
+            <div class="bordr w-25"></div>
+         </div>
+      </div>
+      <div *ngFor='let movie of TrendingMovies' class="  col-md-2 ">
+         <div class="movi position-relative ">
+
+            <img class="w-100" [src]="imgSrc+movie.poster_path" alt="">
+            <a [routerLink]='["/moviDetails",movie.id]'>
+               <h2 class="h6 mt-2">{{movie.title}}</h2>
+            </a>
+            <div class="vote ">{{movie.vote_average}}</div>
+            <div class="favourite position-absolute">
+               <i [class.text-danger]='movie.isClicked' (click)="favorite(movie)" class="fas fa-heart fa-2x"></i>
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+   <!-- Trending TV -->
+   <div class="row p-5">
+      <div class="col-md-4 d-flex align-items-center">
+         <div class="tv ">
+            <div class="bordr w-25  "></div>
+            <h2 class="mt-3">Trending tv to watch Right now</h2>
+            <p class="second mb-2">most watched tv by days</p>
+            <div class="bordr w-25"></div>
+         </div>
+      </div>
+      <div *ngFor='let tv of TrendingTv' class="col-md-2 ">
+         <div class="tv position-relative ">
+            <a [routerLink]='["/tvdetails",tv.id]'>
+               <img class="w-100" [src]="imgSrc+tv.poster_path" [alt]="tv.name">
+               <h2 class="h6 mt-2">{{tv.name|shortLine:5}}</h2>
+               <div class="vote ">{{tv.vote_average}}</div>
+
+            </a>
+         </div>
+      </div>
+   </div>
+    <!-- Trending People  -->
+   <div class="row p-5">
+      <div class="col-md-4 d-flex align-items-center">
+         <div class="person">
+            <div class="bordr w-25  "></div>
+            <h2 class="mt-3">Trending people to watch Right now</h2>
+            <p class="second mb-2">most watched people by days</p>
+            <div class="bordr w-25"></div>
+         </div>
+      </div>
+      <div *ngFor='let person of TrendingPeople' class="  col-md-2 ">
+         <div class="person position-relative ">
+            <a [routerLink]='["/peopledetails",person.id]'>
+               <img class="w-100" [src]="imgSrc+person.profile_path" [alt]="person.name">
+            </a>
+            <h2 class="h6 mt-2">{{person.name}}</h2>
+         </div>
+      </div>
+   </div>

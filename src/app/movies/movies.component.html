@@ -1,0 +1,23 @@
+<div class="container ">
+    <div class="row p-5">
+        <div class="col-md-4  d-flex align-items-center">
+         <div class="movie" >
+          <div class="bordr w-25  "></div>
+          <h2 class="mt-2">Trending movies to watch Right now</h2>
+         <p class="second mb-2" >most watched movies by days</p>
+          <div class="bordr w-25"></div>
+     </div>
+        </div>
+       
+         <div *ngFor='let movie of TrendingMovies' class="  col-md-2 ">
+            <div class="movi position-relative ">
+               <a [routerLink]='["/moviDetails",movie.id]'>
+           <img class="w-100"[src]="imgSrc+movie.poster_path" alt="">
+        <h2 class="h6 mt-2">{{movie.title}}</h2>
+        <div class="vote ">{{movie.vote_average}}</div>
+      </a>
+        </div>
+       
+       </div>
+       
+    </div>

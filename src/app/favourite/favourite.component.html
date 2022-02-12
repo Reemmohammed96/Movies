@@ -1,0 +1,22 @@
+<div class="container ">
+    <div class="row p-5">
+        <div class="col-md-4  d-flex align-items-center">
+         <div class="movie" >
+          <div class="bordr w-25  "></div>
+          <h2 class="mt-2">Trending favorites to watch Right now</h2>
+         <p class="second mb-2" >most watched movies by days</p>
+          <div class="bordr w-75"></div>
+     </div>
+        </div>
+       
+         <div *ngFor='let fav of favMovies' class="  col-md-2 ">
+            <div class="movi position-relative ">
+               <a [routerLink]='["/moviDetails",fav.id]'>
+           <img class="w-100"[src]="imgSrc+fav.poster_path" alt="" >
+        <h2 class="h6 mt-2">{{fav.title}}</h2>
+        <div class="vote ">{{fav.vote_average}}</div>
+      </a>
+        </div>
+       
+       </div>
+    </div>   

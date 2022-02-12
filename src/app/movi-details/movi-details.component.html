@@ -1,0 +1,18 @@
+<div class="container p-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="imgSrc+movidetails?.poster_path"  class="w-100"alt="">
+        </div>
+        <div class="col-md-8 my-2 px-2 row ">
+            <h3>{{movidetails.title}}</h3>
+            <div class="col-md-3 col-sm-2" *ngFor='let genere of movidetails?.genres'>
+              <button class=" w-100  flag btn btn-primary" >{{genere.name}}</button>
+            </div>
+           <p class="text-warning h4 ">popularity: <span class="text-info">{{movidetails.popularity}}</span></p>
+           <p class="text-warning h4">Vote: <span class="text-info">{{movidetails.vote_average}}</span></p>
+           <p class="text-warning h4">Vote Count: <span class="text-info">{{movidetails. vote_count}}</span></p>
+          
+            <p >{{movidetails.overview}}</p>
+        </div>
+    </div>
+</div>
